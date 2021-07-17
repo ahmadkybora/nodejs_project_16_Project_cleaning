@@ -26,7 +26,7 @@ async function all(req, res, next) {
     if (myRole) {
         role = await RoleUser.findOne({
             where: {
-                userId: req.userId,
+                userId: req.body.id,
                 roleId: myRole.id,
             }
         });
@@ -40,7 +40,7 @@ async function all(req, res, next) {
     if (myPermission) {
         permissions = await PermissionUser.findOne({
             where: {
-                userId: req.userId,
+                userId: req.body.id,
                 permissionId: myPermission.id,
             }
         });
@@ -48,7 +48,7 @@ async function all(req, res, next) {
 
     userId = await User.findOne({
         where: {
-            id: req.userId
+            id: req.body.id
         }
     });
 
@@ -76,7 +76,7 @@ async function view(req, res, next) {
     if (myRole) {
         role = await RoleUser.findOne({
             where: {
-                userId: req.userId,
+                userId: req.body.id,
                 roleId: myRole.id,
             }
         });
@@ -90,7 +90,7 @@ async function view(req, res, next) {
     if (myPermission) {
         permissions = await PermissionUser.findOne({
             where: {
-                userId: req.userId,
+                userId: req.body.id,
                 permissionId: myPermission.id,
             }
         });
@@ -98,7 +98,7 @@ async function view(req, res, next) {
 
     userId = await User.findOne({
         where: {
-            id: req.userId
+            id: req.body.id
         }
     });
 
@@ -126,7 +126,7 @@ async function create(req, res, next) {
     if (myRole) {
         role = await RoleUser.findOne({
             where: {
-                userId: req.userId,
+                userId: req.body.id,
                 roleId: myRole.id,
             }
         });
@@ -140,7 +140,7 @@ async function create(req, res, next) {
     if (myPermission) {
         permissions = await PermissionUser.findOne({
             where: {
-                userId: req.userId,
+                userId: req.body.id,
                 permissionId: myPermission.id,
             }
         });
@@ -148,7 +148,7 @@ async function create(req, res, next) {
 
     userId = await User.findOne({
         where: {
-            id: req.userId
+            id: req.body.id
         }
     });
 
@@ -176,7 +176,7 @@ async function update(req, res, next) {
     if (myRole) {
         role = await RoleUser.findOne({
             where: {
-                userId: req.userId,
+                userId: req.body.id,
                 roleId: myRole.id,
             }
         });
@@ -190,7 +190,7 @@ async function update(req, res, next) {
     if (myPermission) {
         permissions = await PermissionUser.findOne({
             where: {
-                userId: req.userId,
+                userId: req.body.id,
                 permissionId: myPermission.id,
             }
         });
@@ -198,7 +198,7 @@ async function update(req, res, next) {
 
     userId = await User.findOne({
         where: {
-            id: req.userId
+            id: req.body.id
         }
     });
 
@@ -226,7 +226,7 @@ async function destroy(req, res, next) {
     if (myRole) {
         role = await RoleUser.findOne({
             where: {
-                userId: req.userId,
+                userId: req.body.id,
                 roleId: myRole.id,
             }
         });
@@ -240,7 +240,7 @@ async function destroy(req, res, next) {
     if (myPermission) {
         permissions = await PermissionUser.findOne({
             where: {
-                userId: req.userId,
+                userId: req.body.id,
                 permissionId: myPermission.id,
             }
         });
@@ -248,7 +248,7 @@ async function destroy(req, res, next) {
 
     userId = await User.findOne({
         where: {
-            id: req.userId
+            id: req.body.id
         }
     });
 

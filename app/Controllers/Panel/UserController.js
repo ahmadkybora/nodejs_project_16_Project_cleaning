@@ -286,7 +286,7 @@ async function update(req, res) {
                 })
                 .toFile(newPath)
                 .then(async () => {
-                    const newUser = await User.update({
+                    const newUser = await User.update(newUsr, {
                         first_name: fields.first_name,
                         last_name: fields.last_name,
                         username: fields.username,
@@ -312,7 +312,7 @@ async function update(req, res) {
                             if (fields.permission !== undefined && fields.permission !== null) {
                                 let permissions = fields.permission.split(',');
                                 for (let i = 0; i < permissions.length; i++) {
-                                    await PermissionUser.update({
+                                    await PermissionUser.create({
                                         userId: userId.id,
                                         permissionId: permissions[i]
                                     })
@@ -329,7 +329,7 @@ async function update(req, res) {
                             if (fields.role !== undefined && fields.role !== null) {
                                 let roles = fields.role.split(',');
                                 for (let i = 0; i < roles.length; i++) {
-                                    await RoleUser.update({
+                                    await RoleUser.create({
                                         userId: userId.id,
                                         roleId: roles[i]
                                     })

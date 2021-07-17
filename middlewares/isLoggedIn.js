@@ -14,15 +14,15 @@ async function isLoggedIn(req, res, next) {
     }
 
     const token = authHeader && authHeader.split(' ')[1];
-    let user = jwt.decode(token);
+    let result = jwt.decode(token);
 
-    const result = await Token.findOne({
+    const user = await Token.findOne({
         where: {
-            userId: user.id,
+            userId: result.id,
         }
     });
 
-    if (!result) {
+    if (!user) {
         return res.status(401).json({
             state: true,
             message: "unAuthorized!",
@@ -39,7 +39,7 @@ async function isLoggedIn(req, res, next) {
                     errors: null
                 });
             } else {
-                req.userId = user.id;
+                req.body = user;
                 next()
             }
         })

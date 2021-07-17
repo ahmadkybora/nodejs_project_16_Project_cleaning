@@ -12,10 +12,10 @@ const RoleUser = dbCon.define('RoleUser', {
         unique: true,
         required: true,
     },
-    permissionId: {
+    userId: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'permissions',
+            model: 'users',
             key: 'id'
         },
         onDelete: 'CASCADE',
