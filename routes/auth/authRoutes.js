@@ -6,7 +6,7 @@ const rECAPTCHA = require('../../middlewares/rECAPTCHA');
 const isAdmin = require('../../middlewares/isAdmin');
 
 router.post('/login', rECAPTCHA, AuthRequest.login, AuthController.login);
-router.post('/register', rECAPTCHA, AuthRequest.register, isAdmin, AuthController.register);
+router.post('/register', rECAPTCHA, AuthRequest.register, AuthController.register);
 router.get('/logout', AuthController.logout);
 router.post('/forget-password', rECAPTCHA, AuthRequest.forgetPassword, AuthController.forgetPassword);
 router.post('/reset-password/:signature', rECAPTCHA, AuthRequest.resetPassword, AuthController.resetPassword);

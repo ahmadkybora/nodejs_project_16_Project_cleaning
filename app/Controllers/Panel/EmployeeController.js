@@ -1,5 +1,9 @@
-const Employee = require('../../Models/EmployeeModel');
-const employeeRequest = require('../../../app/Requests/employeeRequest');
+const User = require('../../Models/UserModel');
+const Role = require('../../Models/RoleModel');
+const RoleUser = require('../../Models/RoleUserModel');
+const Permission = require('../../Models/PermissionModel');
+const PermissionUser = require('../../Models/PermissionUserModel');
+const userRequest = require('../../../app/Requests/UserRequest');
 const Validator = require('fastest-validator');
 const v = new Validator();
 const Handler = require('../../../app/Exceptions/Handler');
@@ -23,6 +27,12 @@ const EmployeeController = {
     search,
 };
 
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
 async function getCaptcha(req, res) {
     let cp = Math.random() * 9000 + 1000;
     let p = new captchapng(80, 30, cp);
@@ -37,26 +47,62 @@ async function getCaptcha(req, res) {
     res.end(imgbase64);
 }
 
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<*>}
+ */
 async function index(req, res) {
     const page = +req.query.page || 1;
-    const perPage = 1;
+    const perPage = 10;
 
     if (req.query.all === 'all') {
-        return res.status(200).json({
-            state: true,
-            message: "Success!",
-            data: {
-                data: await Employee.findAll({
-                    order: [
-                        ['id', 'ASC']
-                    ]
-                }),
-            },
-            errors: null
-        });
+        return res
+            .status(200)
+            .json({
+                state: true,
+                message: "Success!",
+                data: {
+                    data: await User.findAll({
+                        where: {
+                            isAdmin: true
+                        },
+                        order: [
+                            ['id', 'ASC']
+                        ]
+                    }),
+                },
+                errors: null
+            });
     } else {
-        const numberOfEmployees = await Employee.findAndCountAll();
-        const employees = await Employee.findAll({
+        const numberOfEmployees = await User.findAndCountAll();
+        const employees = await User.findAll({
+            include: [
+                {
+                    model: RoleUser,
+                    attributes: ['id', 'userId', 'roleId'],
+                    include: [
+                        {
+                            model: Role,
+                            attributes: ['id', 'name']
+                        }
+                    ]
+                },
+                {
+                    model: PermissionUser,
+                    attributes: ['id', 'userId', 'permissionId'],
+                    include: [
+                        {
+                            model: Permission,
+                            attributes: ['id', 'name']
+                        }
+                    ]
+                }
+            ],
+            where: {
+                isAdmin: true
+            },
             offset: ((page - 1) * perPage),
             limit: perPage,
             order: [
@@ -82,6 +128,12 @@ async function index(req, res) {
     }
 }
 
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
 async function show(req, res) {
     try {
         const employee = await Employee.findByPk(req.params.id);
@@ -117,7 +169,7 @@ async function store(req, res) {
             state: fields.state,
         };
 
-        const validate = v.validate(newEmp, employeeRequest.create());
+        const validate = v.validate(newEmp, userRequest.create());
         let errorArr = [];
 
         if (validate === true) {

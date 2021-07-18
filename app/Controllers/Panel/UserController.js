@@ -18,7 +18,8 @@ const UserController = {
     store,
     update,
     destroy,
-    search
+    search,
+    userAcl
 };
 
 /**
@@ -265,17 +266,19 @@ async function update(req, res) {
         if (validate === true) {
 
             if (newUsr.password !== newUsr.confirmation_password)
-                return res.status(422).json({
-                    state: false,
-                    message: "your password does not match!",
-                    data: await User.findAll(),
-                    errors: null
-                });
+                return res
+                    .status(422)
+                    .json({
+                        state: false,
+                        message: "your password does not match!",
+                        data: await User.findAll(),
+                        errors: null
+                    });
 
             let oldPath = files.image.path;
             const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
             let fileName = `${uniqueSuffix}_${uuid()}_${files.image.name}`;
-            let newPath = `C:/nodejs_projects/nodejs_project_13_ACL/public/storage/users/${fileName}`;
+            let newPath = `C:/nodejs_projects/nodejs_project_16_Project_cleaning/public/storage/users/${fileName}`;
 
             await sharp(oldPath)
                 .resize(125, 90)
@@ -286,19 +289,23 @@ async function update(req, res) {
                 })
                 .toFile(newPath)
                 .then(async () => {
-                    const newUser = await User.update(newUsr, {
-                        first_name: fields.first_name,
-                        last_name: fields.last_name,
-                        username: fields.username,
-                        email: fields.email,
-                        mobile: fields.mobile,
-                        home_phone: fields.home_phone,
-                        zip_code: fields.zip_code,
-                        password: bcrypt.hashSync(fields.password, 10),
-                        home_address: fields.home_address,
-                        work_address: fields.work_address,
-                        state: fields.state,
+                    const newUser = await User.update({
+                        first_name: newUsr.first_name,
+                        last_name: newUsr.last_name,
+                        username: newUsr.username,
+                        email: newUsr.email,
+                        mobile: newUsr.mobile,
+                        home_phone: newUsr.home_phone,
+                        zip_code: newUsr.zip_code,
+                        password: bcrypt.hashSync(newUsr.password, 10),
+                        home_address: newUsr.home_address,
+                        work_address: newUsr.work_address,
+                        state: newUsr.state,
                         image: newPath,
+                    }, {
+                        where: {
+                            id: req.params.id
+                        },
                     });
 
                     if (newUser) {
@@ -309,7 +316,7 @@ async function update(req, res) {
                         });
                         if (userId) {
 
-                            if (fields.permission !== undefined && fields.permission !== null) {
+                            if (fields.permission !== undefined && fields.permission !== null && fields.permission !== '') {
                                 let permissions = fields.permission.split(',');
                                 for (let i = 0; i < permissions.length; i++) {
                                     await PermissionUser.create({
@@ -326,7 +333,7 @@ async function update(req, res) {
                                         });
                                 }
                             }
-                            if (fields.role !== undefined && fields.role !== null) {
+                            if (fields.role !== undefined && fields.role !== null && fields.role !== '') {
                                 let roles = fields.role.split(',');
                                 for (let i = 0; i < roles.length; i++) {
                                     await RoleUser.create({
@@ -344,21 +351,49 @@ async function update(req, res) {
                                 }
                             }
                         }
-                        return res.status(201).json({
-                            state: true,
-                            message: "Success!",
-                            data: await User.findAll(),
-                            errors: null
+                        const users = await User.findAll({
+                            include: [
+                                {
+                                    model: RoleUser,
+                                    attributes: ['id', 'userId', 'roleId'],
+                                    include: [
+                                        {
+                                            model: Role,
+                                            attributes: ['id', 'name']
+                                        }
+                                    ]
+                                },
+                                {
+                                    model: PermissionUser,
+                                    attributes: ['id', 'userId', 'permissionId'],
+                                    include: [
+                                        {
+                                            model: Permission,
+                                            attributes: ['id', 'name']
+                                        }
+                                    ]
+                                }
+                            ]
                         });
+                        return res
+                            .status(201)
+                            .json({
+                                state: true,
+                                message: "Success!",
+                                data: users,
+                                errors: null
+                            });
                     }
                 })
                 .catch(() => {
-                    return res.status(200).json({
-                        state: false,
-                        message: "Failed!",
-                        data: User.findAll(),
-                        errors: null
-                    });
+                    return res
+                        .status(200)
+                        .json({
+                            state: false,
+                            message: "Failed!",
+                            data: User.findAll(),
+                            errors: null
+                        });
                 });
         } else {
             validate.forEach((err) => {
@@ -446,6 +481,54 @@ async function search(req, res) {
     } catch (err) {
         console.log(err)
     }
+}
+
+/**
+ *
+ * @param req
+ * @param res
+ * @returns {Promise<void>}
+ */
+async function userAcl(req, res) {
+    const userAcl = await User.findOne({
+        attributes: ['id', 'username', 'first_name', 'last_name'],
+        where: {
+            id: req.params.id
+        },
+        include: [
+            {
+                model: RoleUser,
+                attributes: ['id', 'userId', 'roleId'],
+                include: [
+                    {
+                        model: Role,
+                        attributes: ['id', 'name']
+                    }
+                ]
+            },
+            {
+                model: PermissionUser,
+                attributes: ['id', 'userId', 'permissionId'],
+                include: [
+                    {
+                        model: Permission,
+                        attributes: ['id', 'name']
+                    }
+                ]
+            }
+        ]
+    });
+
+    return res
+        .status(200)
+        .json({
+            state: true,
+            message: "Success!",
+            data: {
+                data: userAcl
+            },
+            errors: null
+        });
 }
 
 module.exports = UserController;

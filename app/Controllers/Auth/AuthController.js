@@ -1,6 +1,8 @@
 const User = require('../../../app/Models/UserModel');
 const Permission = require('../../../app/Models/PermissionModel');
 const PermissionUser = require('../../../app/Models/PermissionUserModel');
+const Role = require('../../Models/RoleModel');
+const RoleUser = require('../../Models/RoleUserModel');
 const Token = require('../../../app/Models/TokenModel');
 const passport = require('passport');
 const bcrypt = require('bcrypt');
@@ -152,7 +154,22 @@ function rememberMe(req, res) {
 async function register(req, res) {
     const {first_name, last_name, username, email, password} = req.body;
     const hash = await bcrypt.hash(password, 10);
-    await User.create({first_name, last_name, username, email, password: hash});
+    const newUsr = await User.create({first_name, last_name, username, email, password: hash});
+
+    if (newUsr) {
+        role = await Role.findOne({
+            where: {
+                name: "User"
+            }
+        });
+        if (role) {
+            await RoleUser.create({
+                userId: newUsr.id,
+                roleId: role.id,
+            })
+        }
+    }
+
     await SignUp.sendEmail(
         email,
         username,

@@ -10,5 +10,6 @@ router.post('/store', isLoggedIn, isAdmin, UserController.store);
 router.post('/update/:id', isLoggedIn, isAdmin, UserController.update);
 router.get('/destroy/:id', isLoggedIn, isAdmin, UserController.destroy);
 router.post('/search', isLoggedIn, isAdmin, UserController.search);
+router.get('/user-acl/:id', isLoggedIn, isAdmin, UserController.userAcl);
 
 module.exports = router;
