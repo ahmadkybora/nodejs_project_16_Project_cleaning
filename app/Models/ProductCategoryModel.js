@@ -1,7 +1,7 @@
 const { Sequelize, Model, DataTypes } = require("sequelize");
 const dbCon = require('../../database/connection');
 const BrandModel = require('./BrandModel');
-const EmployeeModel = require('./EmployeeModel');
+const UserModel = require('./UserModel');
 
 const ProductCategory = dbCon.define('ProductCategory', {
     id: {
@@ -12,10 +12,10 @@ const ProductCategory = dbCon.define('ProductCategory', {
         unique: true,
         required: true,
     },
-    employeeId: {
+    userId: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'employees',
+            model: 'users',
             key: 'id'
         },
         onDelete: 'CASCADE',
@@ -70,15 +70,15 @@ BrandModel.hasMany(ProductCategory, {
     onUpdate: "CASCADE",
 });
 
-ProductCategory.belongsTo(EmployeeModel, {
-    foreignKey: 'employeeId',
+ProductCategory.belongsTo(UserModel, {
+    foreignKey: 'userId',
     constraint: true,
     onDelete: "CASCADE",
     onUpdate: "CASCADE",
 });
 
-EmployeeModel.hasMany(ProductCategory, {
-    foreignKey: 'employeeId',
+UserModel.hasMany(ProductCategory, {
+    foreignKey: 'userId',
     constraint: true,
     onDelete: "CASCADE",
     onUpdate: "CASCADE",

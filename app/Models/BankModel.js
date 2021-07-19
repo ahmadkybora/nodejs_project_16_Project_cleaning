@@ -19,10 +19,10 @@ const Bank = dbCon.define('Bank', {
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE',
     },
-    employeeId: {
+    userId: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'employees',
+            model: 'users',
             key: 'id'
         },
         onDelete: 'CASCADE',

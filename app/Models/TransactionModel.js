@@ -1,7 +1,6 @@
 const {Sequelize, Model, DataTypes} = require("sequelize");
 const sequelize = require('../../database/connection');
 const User = require('./UserModel');
-const Employee = require('./EmployeeModel');
 const Bank = require('./BankModel');
 
 const Transaction = sequelize.define('Transaction', {
@@ -17,14 +16,6 @@ const Transaction = sequelize.define('Transaction', {
         type: DataTypes.INTEGER,
         references: {
             model: 'users',
-            key: 'id'
-        },
-        onDelete: 'CASCADE',
-    },
-    employeeId: {
-        type: DataTypes.INTEGER,
-        references: {
-            model: 'employees',
             key: 'id'
         },
         onDelete: 'CASCADE',
@@ -79,29 +70,8 @@ Transaction.belongsTo(User, {
     onUpdate: "CASCADE",
 });
 
-Transaction.belongsTo(User, {
-    foreignKey: 'userId',
-    constraint: true,
-    onDelete: "CASCADE",
-    onUpdate: "CASCADE",
-});
-
 User.hasMany(Transaction, {
     foreignKey: 'userId',
-    constraint: true,
-    onDelete: "CASCADE",
-    onUpdate: "CASCADE",
-});
-
-Transaction.belongsTo(Employee, {
-    foreignKey: 'employeeId',
-    constraint: true,
-    onDelete: "CASCADE",
-    onUpdate: "CASCADE",
-});
-
-Employee.hasMany(Transaction, {
-    foreignKey: 'employeeId',
     constraint: true,
     onDelete: "CASCADE",
     onUpdate: "CASCADE",

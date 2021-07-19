@@ -102,7 +102,18 @@ async function login(req, res) {
         ]
     });
 
-    const roles = '';
+    const roles = await RoleUser.findAll({
+        attributes: ['userId', 'roleId'],
+        where: {
+            userId: user.id,
+        },
+        include: [
+            {
+                model: Role,
+                attributes: ['id', 'name']
+            }
+        ]
+    });
 
     return res.status(200).json({
         state: true,

@@ -1,6 +1,6 @@
 const { Sequelize, Model, DataTypes } = require("sequelize");
 const sequelize = require('../../database/connection');
-const EmployeeModel = require('./EmployeeModel');
+const UserModel = require('./UserModel');
 
 const Brand = sequelize.define('Brand', {
     id: {
@@ -11,10 +11,10 @@ const Brand = sequelize.define('Brand', {
         unique: true,
         required: true,
     },
-    employeeId: {
+    userId: {
         type: DataTypes.INTEGER,
         references: {
-            model: 'employees',
+            model: 'users',
             key: 'id'
         },
         onDelete: 'CASCADE',
@@ -49,15 +49,15 @@ const Brand = sequelize.define('Brand', {
     }
 });
 
-Brand.belongsTo(EmployeeModel, {
-    foreignKey: 'employeeId',
+Brand.belongsTo(UserModel, {
+    foreignKey: 'userId',
     constraint: true,
     onDelete: "CASCADE",
     onUpdate: "CASCADE",
 });
 
-EmployeeModel.hasMany(Brand, {
-    foreignKey: 'employeeId',
+UserModel.hasMany(Brand, {
+    foreignKey: 'userId',
     constraint: true,
     onDelete: "CASCADE",
     onUpdate: "CASCADE",
