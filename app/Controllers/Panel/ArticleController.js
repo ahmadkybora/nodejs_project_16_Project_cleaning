@@ -1,6 +1,5 @@
 const Article = require('../../Models/ArticleModel');
 const ArticleCategory = require('../../Models/ArticleCategoryModel');
-const Employee = require('../../Models/EmployeeModel');
 const ArticleRequest = require('../../../app/Requests/ArticleRequest');
 const Validator = require('fastest-validator');
 const v = new Validator();

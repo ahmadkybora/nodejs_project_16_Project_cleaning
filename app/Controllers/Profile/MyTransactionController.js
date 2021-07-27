@@ -1,7 +1,6 @@
 const Transaction = require('../../Models/TransactionModel');
 const User = require('../../Models/UserModel');
 const Bank = require('../../Models/BankModel');
-const Employee = require('../../Models/EmployeeModel');
 const TransactionRequest = require('../../../app/Requests/TransactionRequest');
 const Validator = require('fastest-validator');
 const v = new Validator();

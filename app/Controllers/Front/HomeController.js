@@ -3,7 +3,6 @@ const ProductCategory = require('../../Models/ProductCategoryModel');
 const Product = require('../../Models/ProductModel');
 const ArticleCategory = require('../../Models/ArticleCategoryModel');
 const Article = require('../../Models/ArticleModel');
-const Employee = require('../../Models/EmployeeModel');
 const User = require('../../Models/UserModel');
 const ProductFavoriteLike = require('../../Models/ProductFavoriteLikeModel');
 const ArticleLike = require('../../Models/ArticleLikeModel');
@@ -82,7 +81,7 @@ async function productCategories(req, res) {
                 data: await ProductCategory.findAll({
                     include: [
                         {
-                            model: Employee,
+                            model: User,
                             attributes: ['id', 'username']
                         }
                     ],
@@ -113,9 +112,9 @@ async function products(req, res) {
                             'userId',
                             'productId'
                         ],
-                        where: {
+                        /*where: {
                             userId: 1
-                        },
+                        },*/
                     },
                 ]
             }),

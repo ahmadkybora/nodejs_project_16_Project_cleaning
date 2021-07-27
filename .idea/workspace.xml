@@ -3,14 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="c9403eee-01e8-4a65-9805-5aee23557d7b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/Auth/AuthController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Auth/AuthController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ArticleCategoryModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ArticleCategoryModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ArticleModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ArticleModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/BankModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/BankModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/BrandModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/BrandModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/EmployeeModel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ProductCategoryModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ProductCategoryModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/TransactionModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/TransactionModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Chat/ChatController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Chat/ChatController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Front/HomeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Front/HomeController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Panel/ArticleCategoryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Panel/ArticleCategoryController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Panel/ArticleController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Panel/ArticleController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Panel/BrandController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Panel/BrandController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Panel/ProductCategoryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Panel/ProductCategoryController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/Profile/MyTransactionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/Controllers/Profile/MyTransactionController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/app.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +19,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450" />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Controllers/Front/HomeController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="502">
+              <caret line="114" column="26" selection-start-line="114" selection-start-column="24" selection-end-line="116" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -27,22 +37,36 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Controllers/Front/HomeController.js" />
         <option value="$PROJECT_DIR$/middlewares/isLoggedIn.js" />
         <option value="$PROJECT_DIR$/middlewares/isAdmin.js" />
-        <option value="$PROJECT_DIR$/app/Models/RoleUserModel.js" />
         <option value="$PROJECT_DIR$/app/Policies/UserPolicy.js" />
         <option value="$PROJECT_DIR$/routes/panel/userRoutes.js" />
         <option value="$PROJECT_DIR$/routes/auth/authRoutes.js" />
         <option value="$PROJECT_DIR$/app/Controllers/Panel/EmployeeController.js" />
         <option value="$PROJECT_DIR$/app/Controllers/Panel/UserController.js" />
         <option value="$PROJECT_DIR$/app/Controllers/Auth/AuthController.js" />
+        <option value="$PROJECT_DIR$/app/Models/TransactionModel.js" />
+        <option value="$PROJECT_DIR$/app/Controllers/Panel/ArticleCategoryController.js" />
+        <option value="$PROJECT_DIR$/app/Controllers/Panel/ArticleController.js" />
+        <option value="$PROJECT_DIR$/app/Controllers/Panel/BrandController.js" />
+        <option value="$PROJECT_DIR$/app/Controllers/Panel/ProductCategoryController.js" />
+        <option value="$PROJECT_DIR$/app/Controllers/Chat/ChatController.js" />
+        <option value="$PROJECT_DIR$/app/Controllers/Profile/MyTransactionController.js" />
+        <option value="$PROJECT_DIR$/app/Models/UserModel.js" />
+        <option value="$PROJECT_DIR$/app/Models/PermissionModel.js" />
         <option value="$PROJECT_DIR$/app/Models/ArticleCategoryModel.js" />
+        <option value="$PROJECT_DIR$/app/Models/ArticleLikeModel.js" />
         <option value="$PROJECT_DIR$/app/Models/ArticleModel.js" />
         <option value="$PROJECT_DIR$/app/Models/BankModel.js" />
         <option value="$PROJECT_DIR$/app/Models/BrandModel.js" />
+        <option value="$PROJECT_DIR$/app/Models/CartModel.js" />
+        <option value="$PROJECT_DIR$/app/Models/RoleUserModel.js" />
+        <option value="$PROJECT_DIR$/app/Models/ProductModel.js" />
+        <option value="$PROJECT_DIR$/app/Models/ProductFavoriteLikeModel.js" />
         <option value="$PROJECT_DIR$/app/Models/ProductCategoryModel.js" />
-        <option value="$PROJECT_DIR$/app/Models/TransactionModel.js" />
+        <option value="$PROJECT_DIR$/app/Models/PermissionUserModel.js" />
+        <option value="$PROJECT_DIR$/app/Models/PermissionRoleModel.js" />
+        <option value="$PROJECT_DIR$/app/Controllers/Front/HomeController.js" />
       </list>
     </option>
   </component>
@@ -75,7 +99,14 @@
               <item name="nodejs_project_16_Project_cleaning" type="b2602c69:ProjectViewProjectNode" />
               <item name="nodejs_project_16_Project_cleaning" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodejs_project_16_Project_cleaning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodejs_project_16_Project_cleaning" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Front" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -85,7 +116,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/vue_project/nuxtjs_project_12_Project_cleaning" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -113,17 +144,22 @@
       <updated>1626497702243</updated>
       <workItem from="1626497703393" duration="10627000" />
       <workItem from="1626583747501" duration="13133000" />
-      <workItem from="1626691203387" duration="2201000" />
+      <workItem from="1626691203387" duration="2408000" />
+      <workItem from="1627212265312" duration="1085000" />
+      <workItem from="1627279498159" duration="84000" />
+      <workItem from="1627291890486" duration="716000" />
+      <workItem from="1627382597508" duration="3155000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25961000" />
+    <option name="totallyTimeSpent" value="31208000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25351351" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.27243245" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -138,7 +174,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.7331042" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.73103446" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -149,13 +185,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Controllers/Front/HomeController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-196">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/middlewares/isAdmin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
@@ -191,20 +220,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Controllers/Panel/ArticleCategoryController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="179" column="32" selection-start-line="179" selection-start-column="32" selection-end-line="179" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Controllers/Panel/RoleController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -229,6 +244,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/EmployeeModel.js" />
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Panel/ArticleCategoryController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Panel/ArticleController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Panel/BankController.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Panel/BrandController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Panel/DashboardController.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Controllers/Panel/EmployeeController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
@@ -236,84 +279,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Panel/ProductCategoryController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Panel/ProductController.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Panel/RoleController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Controllers/Panel/UserController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
+        <state relative-caret-position="13804">
           <caret line="493" column="66" selection-start-line="493" selection-start-column="66" selection-end-line="493" selection-end-column="66" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/sequelize.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Controllers/Auth/AuthController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
+        <state relative-caret-position="3304">
           <caret line="118" column="20" lean-forward="true" selection-start-line="118" selection-start-column="20" selection-end-line="118" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/ArticleLikeModel.js">
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Chat/ChatCategoryController.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/ArticleCategoryModel.js">
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Chat/ChatController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        <state relative-caret-position="28">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/ArticleModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/BankModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/BrandModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="60" column="21" lean-forward="true" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/EmployeeModel.js">
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Front/ProductController.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/CartModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1722" />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Profile/MyCartController.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/PermissionModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1260" />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Profile/MyDashboardController.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/PermissionRoleModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-504" />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Profile/MyOrderController.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/UserModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2198" />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Profile/MyProfileController.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/UserLogModel.js">
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Profile/MyTransactionController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1554" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/TransactionModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+        <state relative-caret-position="84">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/RoleModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-518" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/TokenModel.js">
@@ -321,37 +355,121 @@
         <state relative-caret-position="-1176" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/RoleUserModel.js">
+    <entry file="file://$PROJECT_DIR$/app/Models/TransactionModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-364">
-          <caret line="26" column="27" lean-forward="true" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+        <state relative-caret-position="-1036">
+          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/RoleModel.js">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/app/Models/UserLogModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1554" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/UserModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2100">
+          <caret line="75" selection-start-line="75" selection-end-line="97" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/PermissionModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1064">
+          <caret line="38" selection-start-line="38" selection-end-line="100" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/ArticleCategoryModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="21" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/ArticleLikeModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="29" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/ArticleModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="31" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/BankModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="29" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/BrandModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="13" column="4" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="21" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/CartModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="31" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/RoleUserModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="31" selection-end-column="6" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/ProductModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-14" />
+        <state relative-caret-position="364">
+          <caret line="13" column="4" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="21" selection-end-column="6" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/ProductFavoriteLikeModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-252" />
+        <state relative-caret-position="364">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="31" selection-end-column="6" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/ProductCategoryModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="80" column="21" selection-start-line="80" selection-start-column="21" selection-end-line="80" selection-end-column="21" />
-          <caret line="73" column="21" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
+        <state relative-caret-position="-1414">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="31" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/PermissionUserModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-588" />
+        <state relative-caret-position="-126">
+          <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="31" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/PermissionRoleModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="22" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controllers/Front/HomeController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="114" column="26" selection-start-line="114" selection-start-column="24" selection-end-line="116" selection-end-column="28" />
+        </state>
       </provider>
     </entry>
   </component>

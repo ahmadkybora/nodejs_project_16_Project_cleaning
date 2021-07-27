@@ -1,6 +1,5 @@
 const ProductCategory = require("../../Models/ProductCategoryModel");
 const Brand = require("../../Models/BrandModel");
-const Employee = require("../../Models/EmployeeModel");
 const productCategoryRequest = require("../../../app/Requests/productCategoryRequest");
 const Validator = require("fastest-validator");
 const v = new Validator();

@@ -1,6 +1,5 @@
 const Brand = require('../../../app/Models/BrandModel');
 const BrandRequest = require('../../../app/Requests/BrandRequest');
-const Employee = require("../../../app/Models/EmployeeModel");
 const Validator = require('fastest-validator');
 const v = new Validator();
 const uuid = require('uuid').v4;
