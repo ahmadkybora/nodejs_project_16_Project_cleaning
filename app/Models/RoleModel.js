@@ -37,5 +37,17 @@ const RoleModel = dbCon.define('Role', {
     }
 });
 
+/*const roles = [
+    'Super Admin',
+    'Admin',
+    'User'
+];
+
+for (let i = 0; i < roles.length; i++) {
+    RoleModel.create({
+        name: roles[i]
+    });
+}*/
+
 module.exports = RoleModel;
 

@@ -1,6 +1,10 @@
 const {Sequelize, Model, DataTypes} = require("sequelize");
 const dbCon = require('../../database/connection');
 const bcrypt = require('bcrypt');
+/*const Role = require('./RoleModel');
+const RoleUser = require('./RoleUserModel');
+const Permission = require('./PermissionModel');
+const PermissionUser = require('./PermissionUserModel');*/
 
 const User = dbCon.define('User', {
     id: {
@@ -77,7 +81,7 @@ const User = dbCon.define('User', {
     const password = '12345678';
     const hash = await bcrypt.hash(password, 10);
 
-    await User.create({
+    const user = await User.create({
         first_name: 'admin',
         last_name: 'admin',
         username: 'admin',
@@ -94,6 +98,39 @@ const User = dbCon.define('User', {
         createdAt: Date.now(),
         updatedAt: Date.now(),
     });
+
+    if (user) {
+        const admin = await User.find({
+            where: {
+                id: user.id
+            }
+        });
+
+        if (admin) {
+            const roleAdmin = await Role.find({
+                where: {
+                    name: "Super Admin"
+                }
+            });
+
+            if (roleAdmin) {
+                const roleUser = await RoleUser.create({
+                    roleId: roleAdmin.id,
+                    userId: admin.id,
+                });
+
+                if (roleUser) {
+                    const permissions = await Permission.findAll();
+                    for (let permission in permissions) {
+                        await PermissionUser.create({
+                            permissionId: permission.id,
+                            userId: user.id
+                        });
+                    }
+                }
+            }
+        }
+    }
 };
 user();*/
 
